@@ -7,7 +7,10 @@ function App() {
   return (
     <div className ="App">
       <div className="buttons">
-        <Button>BUTTION</Button>
+        <Button size="large">BUTTION</Button>
+        <Button size="medium">BUTTION</Button>
+        <Button size="small">BUTTION</Button>
+
       </div>
     </div>
   );

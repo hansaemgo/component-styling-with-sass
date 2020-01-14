@@ -26,6 +26,11 @@ function App() {
         <Button color="pink" outline >BUTTION</Button>
         <Button color="gray" outline>BUTTION</Button>
       </div>
+      <div className="buttons">
+        <Button outline={true} fullWidth>BUTTON</Button>
+        <Button color="pink" outline fullWidth>BUTTION</Button>
+        <Button color="gray" outline fullWidth>BUTTION</Button>
+      </div>
     </div>
   );
 }

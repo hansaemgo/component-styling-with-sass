@@ -7,7 +7,7 @@ function App() {
   return (
     <div className ="App">
       <div className="buttons">
-        <Button size="large">BUTTION</Button>
+        <Button size="large" className="customized-button">BUTTION</Button>
         <Button size="medium">BUTTION</Button>
         <Button size="small">BUTTION</Button>
       </div>
@@ -27,11 +27,21 @@ function App() {
         <Button color="gray" outline>BUTTION</Button>
       </div>
       <div className="buttons">
-        <Button outline={true} fullWidth>BUTTON</Button>
+        <Button outline={true} fullWidth className="customized-button">BUTTON</Button>
         <Button color="pink" outline fullWidth >BUTTION</Button>
-        <Button color="gray" fullWidth onClick ={() => {
+        <Button color="gray" fullWidth 
+          onClick ={() => {
           console.log('클릭');
-        }}>BUTTION</Button>
+        }}
+        onMouseMove={()=> {
+          console.log('마우스 무브');
+        }
+   
+        }>BUTTION</Button>
+      </div>
+      <div>
+        <p>1. 컴포넌트의 이름을 고유하게 지정</p>
+        <p>2. 최상위 엘레먼트의 이르므을 컴포넌트와 동일하게</p>
       </div>
     </div>
   );

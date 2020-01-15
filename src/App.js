@@ -28,8 +28,10 @@ function App() {
       </div>
       <div className="buttons">
         <Button outline={true} fullWidth>BUTTON</Button>
-        <Button color="pink" outline fullWidth>BUTTION</Button>
-        <Button color="gray" outline fullWidth>BUTTION</Button>
+        <Button color="pink" outline fullWidth >BUTTION</Button>
+        <Button color="gray" fullWidth onClick ={() => {
+          console.log('클릭');
+        }}>BUTTION</Button>
       </div>
     </div>
   );

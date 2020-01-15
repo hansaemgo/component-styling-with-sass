@@ -8,12 +8,13 @@ import './Button.scss';
 // 다양한 버튼 컬러 생성
 // color: blue, pink, gray
 
-function Button({children, size, color, outline, fullWidth }) {
+function Button({children, size, color, outline, fullWidth, onClick, onMove }) {
     return (
     <button className ={classNames('Button', size, color, {
         outline,
         fullWidth
-    })}>{children}</button>
+    })}
+    onClick={onClick}>{children}</button>
     )
 };
 

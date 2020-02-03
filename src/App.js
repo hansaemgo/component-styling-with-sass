@@ -1,50 +1,59 @@
 import React from 'react';
-import Button from './components/Button';
 import './App.scss';
-
+import Button from './components/Button';
 
 function App() {
-  return (
-    <div className ="App">
-      <div className="buttons">
-        <Button size="large" className="customized-button">BUTTION</Button>
-        <Button size="medium">BUTTION</Button>
-        <Button size="small">BUTTION</Button>
-      </div>
-      <div className="buttons">
-        <Button color="gray" size="large">BUTTION</Button>
-        <Button color="gray" size="medium">BUTTION</Button>
-        <Button color="gray" size="small">BUTTION</Button>
-      </div>
-      <div className="buttons">
-        <Button color="pink">BUTTION</Button>
-        <Button color="pink" size="medium">BUTTION</Button>
-        <Button color="pink" size="small">BUTTION</Button>
-      </div>
-      <div className="buttons">
-        <Button outline={true}>BUTTON</Button>
-        <Button color="pink" outline >BUTTION</Button>
-        <Button color="gray" outline>BUTTION</Button>
-      </div>
-      <div className="buttons">
-        <Button outline={true} fullWidth className="customized-button">BUTTON</Button>
-        <Button color="pink" outline fullWidth >BUTTION</Button>
-        <Button color="gray" fullWidth 
-          onClick ={() => {
-          console.log('클릭');
-        }}
-        onMouseMove={()=> {
-          console.log('마우스 무브');
-        }
-   
-        }>BUTTION</Button>
-      </div>
-      <div>
-        <p>1. 컴포넌트의 이름을 고유하게 지정</p>
-        <p>2. 최상위 엘레먼트의 이르므을 컴포넌트와 동일하게</p>
-      </div>
-    </div>
-  );
+	return (
+		<div className="App">
+			<div className="Buttons">
+				<Button size="large">Button</Button>
+				<Button>Button</Button>
+				<Button size="small">Button</Button>
+			</div>
+			<div className="Buttons">
+				<Button color="gray" size="large">
+					Button
+				</Button>
+				<Button color="gray">Button</Button>
+				<Button color="gray" size="small">
+					Button
+				</Button>
+			</div>
+			<div className="Buttons">
+				<Button color="orange" size="large">
+					Button
+				</Button>
+				<Button color="orange">Button</Button>
+				<Button color="orange" size="small">
+					Button
+				</Button>
+			</div>
+			<div className="Buttons">
+				<Button color="orange" outline size="large">
+					Button
+				</Button>
+				<Button color="orange" outline>
+					Button
+				</Button>
+				<Button color="orange" size="small" outline>
+					Button
+				</Button>
+			</div>
+			<div className="Buttons">
+				<Button fullwidth>Button</Button>
+				<Button color="orange" fullwidth>
+					Button
+				</Button>
+				<Button
+					color="gray"
+					fullwidth
+					onClick={() => console.log('클릭')}
+				>
+					Button
+				</Button>
+			</div>
+		</div>
+	);
 }
 
 export default App;

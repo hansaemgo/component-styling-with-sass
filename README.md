@@ -36,3 +36,12 @@
     - 다음과 같은 상황에 유용
         1. 레거시 프로젝트에 래약트 도입할때
         2. CSS 클래스 네이밍 규직 만들기 귀찮을 때
+
+### 04. styled component
+
+    - yarn add styled-components
+    - 여러줄의 CSS코드를 조건부로 보여주고 싶다면 {css} 추가
+
+### 05. styled component로 재사용성 높은 버튼 만들기
+
+    -polished 라이븨러리 설치

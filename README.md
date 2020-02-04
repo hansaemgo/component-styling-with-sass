@@ -45,3 +45,5 @@
 ### 05. styled component로 재사용성 높은 버튼 만들기
 
     -polished 라이븨러리 설치
+    - ${props.size === 'large && css` ..... } 이런식으로 medium, small
+    - outline 값은  false or true

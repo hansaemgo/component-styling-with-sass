@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Button from './styledcomponents/Button';
+import Dialog from './components/Dialog';
 
 const AppBlock = styled.div`
 	width: 512px;
@@ -23,39 +24,39 @@ const ButtonGroup = styled.div`
 `;
 
 function App() {
+	const [dialog, setDialog] = useState(false);
+	const onClick = () => {
+		setDialog(true);
+	};
+
+	const onConfirm = () => {
+		console.log('확인');
+		setDialog(false);
+	};
+
+	const onCancle = () => {
+		console.log('취소');
+		setDialog(false);
+	};
 	return (
 		<ThemeProvider theme={{ palette }}>
-			<AppBlock>
-				<ButtonGroup>
-					<Button size="large">Button</Button>
-					<Button color="gray">Button</Button>
-					<Button size="small" color="pink">
-						Button
+			<>
+				<AppBlock>
+					<Button color="pink" onClick={onClick}>
+						삭제
 					</Button>
-				</ButtonGroup>
-				<ButtonGroup>
-					<Button size="large" outline>
-						Button
-					</Button>
-					<Button color="gray" outline>
-						Button
-					</Button>
-					<Button size="small" color="pink" outline>
-						Button
-					</Button>
-				</ButtonGroup>
-				<ButtonGroup>
-					<Button size="large" fullwidth>
-						Button
-					</Button>
-					<Button color="gray" size="large" fullwidth>
-						Button
-					</Button>
-					<Button color="pink" size="large" fullwidth>
-						Button
-					</Button>
-				</ButtonGroup>
-			</AppBlock>
+				</AppBlock>
+				<Dialog
+					title="정말로 삭제하시겠습니까?"
+					cancleText="취소"
+					confirmText="삭제"
+					onConfirm={onConfirm}
+					onCancle={onCancle}
+					visible={dialog}
+				>
+					데이터를 정말로 삭제하시겠습니까?
+				</Dialog>
+			</>
 		</ThemeProvider>
 	);
 }

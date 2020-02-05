@@ -11,12 +11,6 @@ const AppBlock = styled.div`
 	padding: 1rem;
 `;
 
-const palette = {
-	blue: '#228be6',
-	gray: '#adb5bd',
-	pink: '#ff8787'
-};
-
 const ButtonGroup = styled.div`
 	& + & {
 		margin-top: 1rem;
@@ -28,30 +22,39 @@ function App() {
 	const onClick = () => {
 		setDialog(true);
 	};
-
 	const onConfirm = () => {
 		console.log('확인');
 		setDialog(false);
 	};
-
-	const onCancle = () => {
+	const onCancel = () => {
 		console.log('취소');
 		setDialog(false);
 	};
+
 	return (
-		<ThemeProvider theme={{ palette }}>
+		<ThemeProvider
+			theme={{
+				palette: {
+					blue: '#228be6',
+					gray: '#495057',
+					pink: '#e64980'
+				}
+			}}
+		>
 			<>
 				<AppBlock>
-					<Button color="pink" onClick={onClick}>
-						삭제
-					</Button>
+					<ButtonGroup>
+						<Button size="large" color="pink" onClick={onClick}>
+							삭제
+						</Button>
+					</ButtonGroup>
 				</AppBlock>
 				<Dialog
 					title="정말로 삭제하시겠습니까?"
-					cancleText="취소"
 					confirmText="삭제"
+					cancelText="취소"
 					onConfirm={onConfirm}
-					onCancle={onCancle}
+					onCancel={onCancel}
 					visible={dialog}
 				>
 					데이터를 정말로 삭제하시겠습니까?
@@ -60,4 +63,5 @@ function App() {
 		</ThemeProvider>
 	);
 }
+
 export default App;

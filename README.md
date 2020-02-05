@@ -47,3 +47,15 @@
     -polished 라이븨러리 설치
     - ${props.size === 'large && css` ..... } 이런식으로 medium, small
     - outline 값은  false or true
+
+### 06. 트랜지션 구현하기 (Dialog)
+
+    - keyfram
+    - 두개의 로컬상태
+        1. 지금 애니메이션을 보여주고 있다
+        2. 지금 상태가 True에서 False로 변하고 있다. = localvisible
+    - 사라질때 트랜지션을 구현하기 위해 두가지 상태 구현
+        1. animate : 현재 애니메이션 보여주는 중
+        2. localVisible : 다이얼로그 자체적으로 관리하는 visible 값
+        3. localVisible 값은 매번 실제 프롭스로 가져온 visible 값이 바뀔 때 마다 바뀐다
+        4. localvisible 쓰는 이유는 visible이 true-> false로 변환되는 시점을 캐치하기 위해서 사용
